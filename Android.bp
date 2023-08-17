@@ -1,0 +1,25 @@
+android_app {
+    name: "TouchService-Mondrian",
+
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+
+    certificate: "platform",
+    platform_apis: true,
+    privileged: true,
+
+    optimize: {
+        enabled: false,
+    },
+
+    required: [
+        "privapp-permissions_com.xiaomi.touchservice",
+    ]
+}
+
+prebuilt_etc {
+    name: "privapp-permissions_com.xiaomi.touchservice",
+    sub_dir: "permissions",
+    src: "privapp-permissions_com.xiaomi.touchservice.xml",
+    filename_from_src: true,
+}
